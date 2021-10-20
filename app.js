@@ -68,6 +68,7 @@ function filterTodo(e) {
     described in the video, the menu wasn't exactly working as intended. So
     I ended up looking in the comments for how others approached the problem,
     and how it was dealt with below is something I'd like to incorporate when
+    I edit it.
 
     */
 
