@@ -27,13 +27,18 @@ function addTodo(event){
     todoDiv.appendChild(newTodo);
     //ADD TODO TO LOCALSTORAGE
     saveLocalTodos(todoInput.value)
-    //TIME DISPLAY - Allows the user to input a time for when the user
+    //DATE DISPLAY - Allows the user to input a date for when the user
     //  will work on the task
+    const dateDisplay = document.createElement("div");
+    //dateDisplay.innerText = '12:00'; //will replace with an input later
+    dateDisplay.innerHTML = '<input type="date" id="todoDate" name="todoDate"></input>';
+    dateDisplay.classList.add("date-display");
+    todoDiv.appendChild(dateDisplay);
+    //TIME Display - As above, but for a specified amount of time.
     const timeDisplay = document.createElement("div");
-    //timeDisplay.innerText = '12:00'; //will replace with an input later
-    timeDisplay.innerHTML = '<input type="date" id="todoDate" name="todoDate"></input>';
+    timeDisplay.innerText = '12:00 PM';
     timeDisplay.classList.add("time-display");
-    todoDiv.appendChild(timeDisplay);
+    todoDiv.appendChild(timeDisplay)
     //CHECK MARK BUTTON
     const completedButton = document.createElement('button');
     completedButton.innerHTML = '<i class="fas fa-check"></i>';
