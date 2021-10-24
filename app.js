@@ -30,13 +30,12 @@ function addTodo(event){
     //DATE DISPLAY - Allows the user to input a date for when the user
     //  will work on the task
     const dateDisplay = document.createElement("div");
-    //dateDisplay.innerText = '12:00'; //will replace with an input later
     dateDisplay.innerHTML = '<input type="date" id="todoDate" name="todoDate"></input>';
     dateDisplay.classList.add("date-display");
     todoDiv.appendChild(dateDisplay);
     //TIME Display - As above, but for a specified amount of time.
     const timeDisplay = document.createElement("div");
-    timeDisplay.innerText = '12:00 PM';
+    timeDisplay.innerText = '12:00 PM'; //Will replace with an input later
     timeDisplay.classList.add("time-display");
     todoDiv.appendChild(timeDisplay)
     //CHECK MARK BUTTON
