@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: linear-gradient(120deg, #f6d365, #d88771);
+    background-color: #f6d365;
     color: white;
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
@@ -13,6 +13,7 @@ body{
 
 header{
     font-size: 1.5rem;
+    background-image: linear-gradient( #d88771, #d88771, #d88771, #d88771,  #f6d365);
 }
 
 header,
@@ -47,10 +48,11 @@ form button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #d88771;
 }
 
 .todo-list {
-    min-width: 30%;
+    min-width: 50%;
     list-style: none;
 }
 
@@ -71,7 +73,9 @@ form button:hover{
 }
 
 .trash-btn, 
-.complete-btn{
+.complete-btn,
+.time-display,
+.date-display{
     background: #ff6f47;
     color: white;
     border: none;
@@ -80,8 +84,23 @@ form button:hover{
     font-size: 1rem;
 }
 
+.date-display{
+    background: rgb(73, 204, 73);
+}
+
+/*
+    I found that when adding the time display, I had to edit the size of the 
+    Font Awesome icons so that the buttons containing them would be flush with
+    the time display.
+*/
+
 .complete-btn{
     background: rgb(73, 204, 73);
+    font-size: 1.325rem;
+}
+
+.trash-btn {
+    font-size: 1.325rem;
 }
 
 .todo-item{
@@ -92,7 +111,7 @@ form button:hover{
     pointer-events: none;
 }
 
-.completed {
+.complete {
     text-decoration: line-through;
     opacity: 0.5;
 }
@@ -103,8 +122,6 @@ form button:hover{
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     outline: none;
     border: none;
@@ -126,7 +143,7 @@ select {
 .select::after{
     content: "\25BC";
     position: absolute;
-    background: #ff6f47;
+    background: #d88771;
     padding: 1rem;
     top: 0;
     right: 0;
