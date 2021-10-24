@@ -27,6 +27,13 @@ function addTodo(event){
     todoDiv.appendChild(newTodo);
     //ADD TODO TO LOCALSTORAGE
     saveLocalTodos(todoInput.value)
+    //TIME DISPLAY - Allows the user to input a time for when the user
+    //  will work on the task
+    const timeDisplay = document.createElement("div");
+    //timeDisplay.innerText = '12:00'; //will replace with an input later
+    timeDisplay.innerHTML = '<input type="date" id="todoDate" name="todoDate"></input>';
+    timeDisplay.classList.add("time-display");
+    todoDiv.appendChild(timeDisplay);
     //CHECK MARK BUTTON
     const completedButton = document.createElement('button');
     completedButton.innerHTML = '<i class="fas fa-check"></i>';
@@ -41,6 +48,16 @@ function addTodo(event){
     todoList.appendChild(todoDiv);
     //Clear Todo INPUT VALUE
     todoInput.value = "";
+}
+
+const createObject = () => {
+    let todos;
+    //CHECK-- HEY Do I already have something in there?
+    if(localStorage.getItem('todos') === null){
+        todos = [];
+    }else{
+        todos = JSON.parse(localStorage.getItem('todos'));
+    }
 }
 
 function deleteCheck(e) {
@@ -62,15 +79,6 @@ function deleteCheck(e) {
 function filterTodo(e) {
 
     const todos = todoList.childNodes;
-
-    /*
-    I was following the tutorial here, and when typing in the text as was 
-    described in the video, the menu wasn't exactly working as intended. So
-    I ended up looking in the comments for how others approached the problem,
-    and how it was dealt with below is something I'd like to incorporate when
-    I edit it.
-
-    */
 
     todos.forEach((todo) => {
 
